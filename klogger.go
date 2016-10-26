@@ -9,9 +9,11 @@ type (
 		Critical(format string, args ...interface{})
 	}
 
-	loggerFactory func() Logger
+	loggerFactory       func() Logger
+	prefixLoggerFactory func(string) Logger
 )
 
 var (
-	New loggerFactory
+	New           loggerFactory
+	NewWithPrefix prefixLoggerFactory
 )
